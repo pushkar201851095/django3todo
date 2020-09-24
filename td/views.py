@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
-
+from .forms import TodoForm
 # Create your views here.
 
 def home(request):
@@ -44,3 +44,9 @@ def logoutuser(request):
 
 def currenttodos(request):
     return render(request, 'currenttodos.html')
+
+def createtodo(request):
+    if request.method == 'GET':
+        return render(request ,'createtodo.html',{'form':TodoForm()})    
+    else:
+        pass
