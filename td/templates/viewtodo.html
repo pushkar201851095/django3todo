@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{{error}}
+{{todo.title}}
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Login</button>
+</form>
+<h1></h1>
+{% endblock %}
